@@ -1,4 +1,5 @@
 # Complete project details at https://RandomNerdTutorials.com
+import machine
 from machine import Pin
 import time
 
@@ -19,7 +20,7 @@ OFFSET_48 = 48
 BUZZER = Pin(5,Pin.OUT)
 LEDVERDE = Pin(16,Pin.OUT) #Logica positiva
 LEDSENALROJO = Pin(2,Pin.OUT) # lógica negativa
-LEDSENALVERDE = Pin(5,Pin.OUT) #Logica negativa
+LEDSENALVERDE = Pin(10) #Logica negativa
 LEDSENALVERDEGRANDE = Pin(15,Pin.OUT) #Logica positiva
 
 i=0
@@ -40,6 +41,9 @@ while i<22:
   i+=1
   if i==22:
     print(i)
+    LEDSENALROJO.on()
     LEDSENALVERDE.on()
     time.sleep_ms(1000)
     LEDSENALVERDE.off()
+    time.sleep_ms(1000)
+    LEDSENALVERDE.on()
