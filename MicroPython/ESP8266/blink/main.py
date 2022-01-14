@@ -1,5 +1,4 @@
 # Complete project details at https://RandomNerdTutorials.com
-import machine
 from machine import Pin
 import time
 
